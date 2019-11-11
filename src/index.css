@@ -1,0 +1,9 @@
+.avatarHolder img {
+    width: 120px;
+    display: block;
+    height: 120px;
+}
+
+.avatarHolder {
+    overflow: hidden;
+}

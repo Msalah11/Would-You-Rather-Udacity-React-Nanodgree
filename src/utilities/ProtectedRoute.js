@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
-function ProtectedRoute({ component: Component, ...rest }) {
-    const redirect = rest.location.pathname;
+function ProtectedRoute({ component: Component, ...routeProps }) {
+    const redirect = routeProps.location.pathname;
 
     return (
-        <Route {...rest} render={function(props) {
+        <Route {...routeProps} render={function(props) {
             return (
-                rest.loggedIn
+                routeProps.authedUser
                     ? <Component {...props} />
                     : <Redirect to={{
                         pathname: '/login',

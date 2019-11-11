@@ -1,3 +1,4 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reducers from "./reducers";
@@ -6,7 +7,6 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import middleware from "./middlewares";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 const store = createStore(reducers, middleware);
 
 ReactDOM.render(

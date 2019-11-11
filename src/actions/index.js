@@ -8,6 +8,7 @@ export function handleInitialData() {
             .then(function({ users, questions }) {
                 dispatch(receiveUsers(users));
                 dispatch(receiveQuestions(questions));
+                // console.log('Data are Initialed')
             });
     }
 }
