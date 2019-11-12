@@ -1,7 +1,7 @@
-import Login from "./login/Login";
+import Login from "./Login";
 import { connect } from 'react-redux';
 import React, {useEffect} from "react";
-import Dashboard from "./dashboard/Dashboard";
+import Dashboard from "./Dashboard";
 import { handleInitialData } from "../actions";
 import ProtectedRoute from "../utilities/ProtectedRoute";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
