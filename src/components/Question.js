@@ -29,7 +29,7 @@ class Question extends React.Component {
         const percentVotesOptionTwo = (votesOptionTwo / votesTotal).toFixed(2) * 100;
         return (
             <>
-                <Link to={`/questions/${item.id}`} class='q-item--class'>
+                <Link to={`/questions/${item.id}`} className='q-item--class'>
                     <Card style={{marginBottom: '20px'}}>
                         <Card.Header>
                             <Card.Title>{users[item.author].name} Askes:</Card.Title>
@@ -53,17 +53,20 @@ class Question extends React.Component {
                                             {item.optionTwo.text}
                                         </Button>
                                     </ButtonGroup>
-                                    {/*<Row>*/}
-                                    {/*    <Col xs={6}>*/}
-                                    {/*        <ProgressBar now={percentVotesOptionOne} label={`${item.optionOne.votes.length} Votes`} />*/}
-                                    {/*    </Col>*/}
-                                    {/*    <Col xs={6}>*/}
-                                    {/*        <ProgressBar now={percentVotesOptionTwo} label={`${item.optionTwo.votes.length} Votes`} />*/}
-                                    {/*    </Col>*/}
-                                    {/*</Row>*/}
                                 </Col>
                             </Row>
                         </Card.Body>
+                        <Card.Footer>
+                            <div className="item-footer">
+                                <i>{item.optionOne.text}</i>
+                                <ProgressBar animated now={percentVotesOptionOne} label={`${item.optionOne.votes.length} Votes`} />
+                            </div>
+
+                            <div className="item-footer">
+                                <i>{item.optionTwo.text}</i>
+                                <ProgressBar animated now={percentVotesOptionTwo} label={`${item.optionTwo.votes.length} Votes`} />
+                            </div>
+                        </Card.Footer>
                     </Card>
                 </Link>
                 <Toast

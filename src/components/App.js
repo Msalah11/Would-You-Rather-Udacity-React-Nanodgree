@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 import { handleInitialData } from "../actions";
 import ProtectedRoute from "../utilities/ProtectedRoute";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Questions from "./Questions";
 
 function App(props) {
     const { authedUser } = props;
@@ -17,6 +18,7 @@ function App(props) {
         <BrowserRouter>
             <Switch>
                 <ProtectedRoute path='/' exact component={Dashboard} authedUser={authedUser} />
+                <ProtectedRoute path='/questions/:id' exact component={Questions} authedUser={authedUser} />
                 <Route path='/login' component={Login} />
             </Switch>
         </BrowserRouter>

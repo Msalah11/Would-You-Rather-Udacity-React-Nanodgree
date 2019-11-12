@@ -1,5 +1,6 @@
 import React from "react";
 import {Nav, Navbar} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 class Header extends React.Component {
     state = {
@@ -13,7 +14,9 @@ class Header extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link>
+                            <Link to='/'> Home </Link>
+                        </Nav.Link>
                         <Nav.Link href="#link">Leaderboard</Nav.Link>
                         <Nav.Link href="#link">New</Nav.Link>
                         <Nav.Link href="#link">Logout</Nav.Link>
