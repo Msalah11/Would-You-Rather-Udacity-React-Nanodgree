@@ -53,7 +53,7 @@ class Login extends React.Component {
             <div className='loginScreen'>
                 <Container>
                     <Row>
-                        <Col xs={12}>
+                        <Col xs={12} md={{span: 6, offset: 3}}>
                             <Card>
                                 <Card.Header className='text-center'>
                                     <Card.Title>Select User</Card.Title>
