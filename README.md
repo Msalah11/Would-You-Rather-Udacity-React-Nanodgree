@@ -7,11 +7,11 @@ This is is a udacity React nanodgree project you can run this project on your lo
 
 Clone the repo
 ```
-git@github.com:Msalah11/myReads-Udacity-React-Nanodgree.git
+git@github.com:Msalah11/Would-You-Rather-Udacity-React-Nanodgree.git
 ```
 Change into project directory
 ```
-cd myReads-Udacity-React-Nanodgree
+cd Would-You-Rather-Udacity-React-Nanodgree
 ```
 
 Install project dependencies
