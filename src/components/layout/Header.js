@@ -20,6 +20,9 @@ class Header extends React.Component {
                         <Link to="/login" className='nav-link'>Logout</Link>
                     </Nav>
                 </Navbar.Collapse>
+                <div className='text-white'>
+                    Welcome {this.props.authedUser}
+                </div>
             </Navbar>
         );
     }
