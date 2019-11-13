@@ -7,13 +7,13 @@ import {Col, Container, Row, Tab, Tabs} from "react-bootstrap";
 class Dashboard extends React.Component {
     render() {
         const { authedUser, questions } = this.props;
-        const questionsList = Object.keys(questions).map((key) => questions[key]);
+        let questionsList = Object.keys(questions).map((key) => questions[key]);
         let answeredQuestions = [];let unansweredQuestions = [];
-
+        questionsList = questionsList.sort((a, b) => b.timestamp - a.timestamp);
         questionsList.filter(function(question) {
             let contains = (question.optionOne.votes.indexOf(authedUser) > -1 ||
             question.optionTwo.votes.indexOf(authedUser) > -1);
-            contains ? answeredQuestions.push(question) : unansweredQuestions.push(question);
+            return contains ? answeredQuestions.push(question) : unansweredQuestions.push(question);
         });
 
         return (
