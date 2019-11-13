@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Alert, Button, ButtonGroup, Card, Col, Container, Image, Row} from "react-bootstrap";
+import {Alert, Card, Col, Container, Image, Row} from "react-bootstrap";
 import Layout from "./layout/layout";
 
 function Leaderboard(props) {
