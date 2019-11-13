@@ -22,7 +22,7 @@ function App(props) {
                 <ProtectedRoute path='/' exact component={Dashboard} authedUser={authedUser} />
                 <ProtectedRoute path='/questions/:id' exact component={Questions} authedUser={authedUser} />
                 <ProtectedRoute path='/leaderboard' exact component={Leaderboard} authedUser={authedUser} />
-                <ProtectedRoute path='/new' exact component={NewQuestion} authedUser={authedUser} />
+                <ProtectedRoute path='/add' exact component={NewQuestion} authedUser={authedUser} />
                 <Route path='/login' component={Login} />
             </Switch>
         </BrowserRouter>
