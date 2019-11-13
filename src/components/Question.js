@@ -6,7 +6,8 @@ import {Link} from "react-router-dom";
 
 class Question extends React.Component {
     state = {
-        showToast: false
+        showToast: false,
+        toastText: "Woohoo, you're Successfully Answered the Quetion"
     }
 
     setToast(action) {
@@ -14,10 +15,31 @@ class Question extends React.Component {
     }
 
     selectOption(option) {
-        console.log('this', this.props)
         const { answerQuestion, authedUser, item } = this.props;
-        answerQuestion(authedUser, item.id, option);
+        if(!this.isUserVoted(item)) {
+            answerQuestion(authedUser, item.id, option);
+        } else {
+            this.setState({toastText: 'Sorry, You are already voted'})
+        }
         this.setToast(true);
+        const self = this;
+        setTimeout(function(){
+            self.setToast(false);
+        }, 3000);
+    }
+
+    isUserVoted(item) {
+        const { authedUser } = this.props;
+        if (item) {
+            const checkOptionOne = item.optionOne.votes.includes(authedUser);
+            const checkOptionTwo = item.optionTwo.votes.includes(authedUser);
+
+            if (checkOptionOne || checkOptionTwo) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     render() {
@@ -76,7 +98,7 @@ class Question extends React.Component {
                         right: '-80%',
                     }}
                     onClose={() => this.setToast(true)} show={this.state.showToast} delay={3000} autohide>
-                    <Toast.Body>Woohoo, you're Successfully Answered the Quetion</Toast.Body>
+                    <Toast.Body>{this.state.toastText}</Toast.Body>
                 </Toast>
             </>
         );
