@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
                 <Container>
                     <Row>
                         <Col xs={12} md={{span: 6, offset: 3}}>
-                            <Tabs fill variant="tabs" defaultActiveKey="Ansewred" id="uncontrolled-tab-example" className='justify-content-center tabs--class'>
+                            <Tabs fill variant="tabs" defaultActiveKey="Unansewred" id="uncontrolled-tab-example" className='justify-content-center tabs--class'>
                                 <Tab eventKey="Ansewred" title="Ansewred">
                                     {answeredQuestions.map((item, index) => (
                                         <Question item={item} key={index}></Question>
