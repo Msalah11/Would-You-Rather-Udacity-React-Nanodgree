@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Questions from "./Questions";
 import Leaderboard from "./Leaderboard";
 import NewQuestion from "./NewQuestion";
+import NotFound from "./NotFound";
 
 function App(props) {
     const { authedUser } = props;
@@ -24,6 +25,7 @@ function App(props) {
                 <ProtectedRoute path='/leaderboard' exact component={Leaderboard} authedUser={authedUser} />
                 <ProtectedRoute path='/add' exact component={NewQuestion} authedUser={authedUser} />
                 <Route path='/login' component={Login} />
+                <Route component={NotFound} />
             </Switch>
         </BrowserRouter>
     );
